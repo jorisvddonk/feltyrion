@@ -1,12 +1,12 @@
 import "reflect-metadata";
 
-import { StarResolver } from "./Star.resolver";
+import { GQLStarResolver } from "./GQLStar.resolver";
 import { buildSchema } from "type-graphql";
 import { ApolloServer } from "apollo-server";
 
 async function boot() {
   const schema = await buildSchema({
-    resolvers: [StarResolver]
+    resolvers: [GQLStarResolver]
   });
 
   const server = new ApolloServer({ schema });

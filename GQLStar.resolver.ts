@@ -1,16 +1,15 @@
 import { Query, Arg, Resolver } from "type-graphql";
-import { Star } from "./Star";
-import { Noctis } from "noctis-starmap";
 import Starmap from "./Starmap";
+import { GQLStar } from "./GQLStar";
 
-@Resolver(Star)
-export class StarResolver {
+@Resolver(GQLStar)
+export class GQLStarResolver {
   constructor() {}
 
-  @Query(returns => Star)
+  @Query(returns => GQLStar)
   async star(@Arg("name") name: string) {}
 
-  @Query(returns => [Star])
+  @Query(returns => [GQLStar])
   async stars() {
     return Starmap.stars;
   }

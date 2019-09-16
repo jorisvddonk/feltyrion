@@ -1,7 +1,7 @@
 import { ObjectType, Field, ID } from "type-graphql";
 
 @ObjectType()
-export class Star {
+export class GQLStar {
   @Field(type => ID)
   id!: number;
 
