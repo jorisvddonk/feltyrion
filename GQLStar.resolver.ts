@@ -25,4 +25,9 @@ export class GQLStarResolver {
   notes(@Root() star: GQLStar) {
     return Starmap.getGuideEntriesForStar(star.object_id);
   }
+
+  @FieldResolver()
+  planets(@Root() star: GQLStar) {
+    return Starmap.getPlanetsForStar(star.object_id);
+  }
 }
