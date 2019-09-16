@@ -1,9 +1,9 @@
 import { ObjectType, Field } from "type-graphql";
-import { Star } from "noctis-starmap";
+import { Planet } from "noctis-starmap";
 import { GQLGuideEntry } from "./GQLGuideEntry";
 
 @ObjectType()
-export class GQLStar implements Star {
+export class GQLPlanet implements Planet {
   @Field()
   name!: string;
 
@@ -17,10 +17,10 @@ export class GQLStar implements Star {
   z!: number;
 
   @Field()
-  object_id!: number;
+  index!: string;
 
   @Field()
-  type!: string;
+  _index!: number;
 
   @Field(type => [GQLGuideEntry])
   notes: GQLGuideEntry[] | undefined;

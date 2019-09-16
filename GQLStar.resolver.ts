@@ -1,4 +1,4 @@
-import { Query, Arg, Resolver } from "type-graphql";
+import { Query, Arg, Resolver, FieldResolver, Root } from "type-graphql";
 import Starmap from "./Starmap";
 import { GQLStar } from "./GQLStar";
 import { Star } from "noctis-starmap";
@@ -19,5 +19,10 @@ export class GQLStarResolver {
   @Query(returns => [GQLStar])
   async stars() {
     return Starmap.stars;
+  }
+
+  @FieldResolver()
+  notes(@Root() star: GQLStar) {
+    return Starmap.getGuideEntriesForStar(star.object_id);
   }
 }
