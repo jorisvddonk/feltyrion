@@ -3,22 +3,22 @@ name: Docker Image CI
 on: [push]
 
 jobs:
-  login:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/docker/login@master
-      - name: Login
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Login
+        uses: actions/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag feltyrion:latest
+        uses: actions/docker/cli@master
+        with:
+          args: build --tag feltyrion:latest .
       - name: Publish the Docker image
-        run: docker push feltyrion:latest
+        uses: actions/docker/cli@master
+        with:
+          args: push feltyrion:latest
