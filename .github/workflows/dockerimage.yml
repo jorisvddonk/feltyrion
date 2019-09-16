@@ -14,6 +14,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_REGISTRY_URL: "hub.docker.com"
       - name: Build the Docker image
         uses: actions/docker/cli@master
         with:
@@ -21,4 +22,4 @@ jobs:
       - name: Publish the Docker image
         uses: actions/docker/cli@master
         with:
-          args: push feltyrion:latest
+          args: push jorisd/feltyrion:latest
