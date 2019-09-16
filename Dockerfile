@@ -9,5 +9,7 @@ RUN npm ci
 
 ADD . /app
 
+RUN npm run-script build
+
 EXPOSE 4000
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
