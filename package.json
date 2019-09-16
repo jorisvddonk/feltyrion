@@ -1,0 +1,25 @@
+{
+  "name": "feltyrion",
+  "version": "0.0.1",
+  "description": "GraphQL API into the Feltyrion Universe's starmap and guide",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
+  },
+  "author": "Joris van de Donk <jorisvddonk@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@types/graphql": "^14.5.0",
+    "apollo-server": "^2.9.3",
+    "graphql": "^14.5.6",
+    "noctis-starmap": "^1.0.2",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.5"
+  }
+}
