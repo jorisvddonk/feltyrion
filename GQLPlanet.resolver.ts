@@ -26,4 +26,17 @@ export class GQLPlanetResolver {
   notes(@Root() planet: GQLPlanet) {
     return Starmap.getGuideEntriesForPlanetByName(planet.name);
   }
+
+  @FieldResolver()
+  star(@Root() planet: GQLPlanet) {
+    const starID = Starmap.getIDForStarCoordinates(
+      planet.x,
+      planet.y,
+      planet.z
+    );
+    if (starID) {
+      return Starmap.getStarByID(starID);
+    }
+    return undefined;
+  }
 }

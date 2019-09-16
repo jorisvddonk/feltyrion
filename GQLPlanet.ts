@@ -1,6 +1,7 @@
 import { ObjectType, Field } from "type-graphql";
 import { Planet } from "noctis-starmap";
 import { GQLGuideEntry } from "./GQLGuideEntry";
+import { GQLStar } from "./GQLStar";
 
 @ObjectType()
 export class GQLPlanet implements Planet {
@@ -24,4 +25,7 @@ export class GQLPlanet implements Planet {
 
   @Field(type => [GQLGuideEntry])
   notes: GQLGuideEntry[] | undefined;
+
+  @Field(type => GQLStar)
+  star: GQLStar | undefined;
 }
