@@ -22,6 +22,6 @@
     "graphql": "^14.5.6",
     "noctis-starmap": "^1.0.4",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^0.17.5"
+    "type-graphql": "^0.17.6"
   }
 }
