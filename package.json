@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@types/graphql": "^14.5.0",
-    "apollo-server": "^2.9.3",
+    "apollo-server": "^2.25.4",
     "graphql": "^14.5.6",
     "noctis-starmap": "^1.0.4",
     "reflect-metadata": "^0.1.13",
